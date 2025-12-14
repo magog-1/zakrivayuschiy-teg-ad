@@ -57,3 +57,20 @@ popupCloseButton.addEventListener('click', (event) => {
   event.preventDefault();
   popup.close();
 });
+
+// Предотвращаем любые формы submit
+document.addEventListener('submit', (event) => {
+  event.preventDefault();
+});
+
+// Предотвращаем перезагрузку при клике на любые кнопки
+document.addEventListener('click', (event) => {
+  const target = event.target.closest('button');
+  if (target && target.type === 'button') {
+    // Кнопки с type="button" не должны вызывать submit
+    // но добавляем preventDefault для гарантии
+    if (!target.hasAttribute('data-allow-reload')) {
+      event.preventDefault();
+    }
+  }
+});
