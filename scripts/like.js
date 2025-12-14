@@ -7,6 +7,29 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 Если эти классы поменять в HTML, скрипт перестанет работать. Будьте аккуратны.
 */
+const popup = document.getElementById("popup-id");
+const openButton = document.querySelector(".button__popup-open");
+const closeButton = document.querySelector(".button__popup-close");
+
+if (openButton) {
+  openButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    popup.showModal();
+  });
+}
+
+if (closeButton) {
+  closeButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    popup.close();
+  });
+}
+
+document.addEventListener("submit", (event) => {
+  event.preventDefault();
+});
 
 const likeHeartArray = document.querySelectorAll('.like-icon');
 const likeButtonArray = document.querySelectorAll('.card__like-button');
@@ -39,27 +62,3 @@ function setButtonText(heart, button) {
     );
   }
 }
-
-const popup = document.getElementById("popup-id");
-const openButton = document.querySelector(".button__popup-open");
-const closeButton = document.querySelector(".button__popup-close");
-
-if (openButton) {
-  openButton.addEventListener("click", (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    popup.showModal();
-  });
-}
-
-if (closeButton) {
-  closeButton.addEventListener("click", (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    popup.close();
-  });
-}
-
-document.addEventListener("submit", (event) => {
-  event.preventDefault();
-});
