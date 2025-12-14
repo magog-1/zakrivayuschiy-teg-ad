@@ -12,15 +12,13 @@ const likeButtonArray = document.querySelectorAll('.card__like-button');
 const iconButtonArray = document.querySelectorAll('.card__icon-button');
 
 iconButtonArray.forEach((iconButton, index) => {
-  iconButton.addEventListener('click', (event) => {
-    event.preventDefault();
+  iconButton.addEventListener('click', () => {
     toggleIsLiked(likeHeartArray[index], likeButtonArray[index]);
   });
 });
 
 likeButtonArray.forEach((button, index) => {
-  button.addEventListener('click', (event) => {
-    event.preventDefault();
+  button.addEventListener('click', () => {
     toggleIsLiked(likeHeartArray[index], button);
   });
 });
@@ -48,32 +46,14 @@ const popup = document.getElementById('popup-id');
 const popupOpenButton = document.querySelector('.button__popup-open');
 const popupCloseButton = document.querySelector('.button__popup-close');
 
-popupOpenButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  popup.showModal();
-  return false;
-});
+if (popupOpenButton) {
+  popupOpenButton.addEventListener('click', () => {
+    popup.showModal();
+  });
+}
 
-popupCloseButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  popup.close();
-  return false;
-});
-
-// Предотвращаем любые формы submit
-document.addEventListener('submit', (event) => {
-  event.preventDefault();
-  return false;
-});
-
-// Предотвращаем перезагрузку при клике на любые кнопки
-document.addEventListener('click', (event) => {
-  const target = event.target.closest('button');
-  if (target && target.type === 'button') {
-    // Кнопки с type="button" не должны вызывать submit
-    // но добавляем preventDefault для гарантии
-    if (!target.hasAttribute('data-allow-reload')) {
-      event.preventDefault();
-    }
-  }
-});
+if (popupCloseButton) {
+  popupCloseButton.addEventListener('click', () => {
+    popup.close();
+  });
+}
