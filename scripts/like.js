@@ -51,16 +51,19 @@ const popupCloseButton = document.querySelector('.button__popup-close');
 popupOpenButton.addEventListener('click', (event) => {
   event.preventDefault();
   popup.showModal();
+  return false;
 });
 
 popupCloseButton.addEventListener('click', (event) => {
   event.preventDefault();
   popup.close();
+  return false;
 });
 
 // Предотвращаем любые формы submit
 document.addEventListener('submit', (event) => {
   event.preventDefault();
+  return false;
 });
 
 // Предотвращаем перезагрузку при клике на любые кнопки
