@@ -1,1 +1,1 @@
-https://magog-1.github.io/zakrivayuschiy-teg-ad/
+https://github.com/magog-1/zakrivayuschiy-teg-ad
