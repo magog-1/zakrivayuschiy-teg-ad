@@ -12,13 +12,15 @@ const likeButtonArray = document.querySelectorAll('.card__like-button');
 const iconButtonArray = document.querySelectorAll('.card__icon-button');
 
 iconButtonArray.forEach((iconButton, index) => {
-  iconButton.addEventListener('click', () => {
+  iconButton.addEventListener('click', (evt) => {
+    evt.preventDefault();
     toggleIsLiked(likeHeartArray[index], likeButtonArray[index]);
   });
 });
 
 likeButtonArray.forEach((button, index) => {
-  button.addEventListener('click', () => {
+  button.addEventListener('click', (evt) => {
+    evt.preventDefault();
     toggleIsLiked(likeHeartArray[index], button);
   });
 });
@@ -47,13 +49,15 @@ const popupOpenButton = document.querySelector('.button__popup-open');
 const popupCloseButton = document.querySelector('.button__popup-close');
 
 if (popupOpenButton) {
-  popupOpenButton.addEventListener('click', () => {
+  popupOpenButton.addEventListener('click', (evt) => {
+    evt.preventDefault();
     popup.showModal();
   });
 }
 
 if (popupCloseButton) {
-  popupCloseButton.addEventListener('click', () => {
+  popupCloseButton.addEventListener('click', (evt) => {
+    evt.preventDefault();
     popup.close();
   });
 }
