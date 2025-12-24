@@ -15,6 +15,7 @@ iconButtonArray.forEach((iconButton, index) => {
   iconButton.addEventListener('click', (evt) => {
     evt.preventDefault();
     toggleIsLiked(likeHeartArray[index], likeButtonArray[index]);
+    return false;
   });
 });
 
@@ -22,6 +23,7 @@ likeButtonArray.forEach((button, index) => {
   button.addEventListener('click', (evt) => {
     evt.preventDefault();
     toggleIsLiked(likeHeartArray[index], button);
+    return false;
   });
 });
 
@@ -52,6 +54,7 @@ if (popupOpenButton) {
   popupOpenButton.addEventListener('click', (evt) => {
     evt.preventDefault();
     popup.showModal();
+    return false;
   });
 }
 
@@ -59,5 +62,6 @@ if (popupCloseButton) {
   popupCloseButton.addEventListener('click', (evt) => {
     evt.preventDefault();
     popup.close();
+    return false;
   });
 }
