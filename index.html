@@ -577,7 +577,6 @@
       <button
         class="button__popup-open button"
         type="button"
-        aria-controls="popup-id"
       >
         <svg
           width="21"
@@ -593,27 +592,28 @@
       </button>
 
       <dialog id="popup-id" class="popup">
-        <div class="popup__text-open">
-          <svg
-            class="floppy"
-            width="40"
-            height="40"
-            viewBox="0 0 40 40"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <use href="svg/floppy.svg#floppy"></use>
-          </svg>
-          <p class="text__popup">Вставьте дискету, чтобы продолжить</p>
-        </div>
+        <form method="dialog">
+          <div class="popup__text-open">
+            <svg
+              class="floppy"
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <use href="svg/floppy.svg#floppy"></use>
+            </svg>
+            <p class="text__popup">Вставьте дискету, чтобы продолжить</p>
+          </div>
 
-        <button
-          class="button__popup-close button"
-          type="button"
-          aria-controls="popup-id"
-        >
-          <span class="button__text">ок</span>
-        </button>
+          <button
+            class="button__popup-close button"
+            type="submit"
+          >
+            <span class="button__text">ок</span>
+          </button>
+        </form>
       </dialog>
     </main>
 
